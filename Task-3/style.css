@@ -1,0 +1,37 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+  }
+  
+  .transition-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  }
+  
+  .transition-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary {
+    background-color: #113f67;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #38598b;
+    box-shadow: 0 0 10px #113f67;
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .card-title {
+      font-size: 1.25rem;
+    }
+  }
+  

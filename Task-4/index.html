@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complex Form Validation & Dynamic Routing</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container" id="app">
+        <nav>
+            <button type="button" data-route="home" class="active" aria-current="page">Home</button>
+            <button type="button" data-route="form">Sign Up</button>
+        </nav>
+
+        <section id="home" class="page active">
+            <h1>Welcome</h1>
+            <p style="text-align:center; font-size:1.1rem; color:#555;">
+                Please navigate to the Sign Up page to register.
+            </p>
+        </section>
+
+        <section id="form" class="page hidden" aria-live="polite" aria-relevant="additions removals">
+            <h1>Sign Up</h1>
+            <form id="signupForm" novalidate>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required aria-describedby="usernameHelp"
+                    autocomplete="off" />
+                <div class="validation-message" id="usernameHelp"></div>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required aria-describedby="emailHelp" autocomplete="off" />
+                <div class="validation-message" id="emailHelp"></div>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required aria-describedby="passwordHelp"
+                    autocomplete="new-password" />
+                <div class="password-strength" aria-hidden="true">
+                    <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                </div>
+                <div class="validation-message" id="passwordHelp"></div>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required
+                    aria-describedby="confirmPasswordHelp" autocomplete="new-password" />
+                <div class="validation-message" id="confirmPasswordHelp"></div>
+
+                <button type="submit" disabled>Register</button>
+            </form>
+        </section>
+
+        <section id="confirmation" class="page hidden">
+            <h1>Registration Successful</h1>
+            <p class="success-message">Thank you for signing up! You can now close this page or navigate back.</p>
+            <button type="button" id="backHome">Back to Home</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
